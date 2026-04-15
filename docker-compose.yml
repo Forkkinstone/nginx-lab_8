@@ -3,7 +3,7 @@ version: '3.8'
 services:
   php:
     build: .
-    container_name: lab7_php
+    container_name: lab8_php
     volumes:
       - ./www:/var/www/html
     depends_on:
@@ -11,14 +11,14 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management
-    container_name: lab7_rabbit
+    container_name: lab8_rabbit
     ports:
       - "5672:5672"   # Порт для PHP
       - "15672:15672" # Админка (guest/guest)
 
   nginx:
     image: nginx:alpine
-    container_name: lab7_nginx
+    container_name: lab8_nginx
     ports:
       - "8080:80"
     volumes:
