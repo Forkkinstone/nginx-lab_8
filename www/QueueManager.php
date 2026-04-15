@@ -33,7 +33,11 @@ class QueueManager {
     }
 
     public function __destruct() {
-        $this->channel->close();
-        $this->connection->close();
+        if ($this->channel) {
+            $this->channel->close();
+        }
+        if ($this->connection) {
+            $this->connection->close();
+        }
     }
 }
